@@ -19,6 +19,9 @@ public class Blogpost {
 	@Column(name = "id")
 	private Integer id;
 
+	@Column(name = "publisher_name")
+	private String publisherName;
+
 	@Column(name = "title", length = 1000)
 	private String title;
 
@@ -49,6 +52,14 @@ public class Blogpost {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getPublisherName() {
+		return publisherName;
+	}
+
+	public void setPublisherName(String publisherName) {
+		this.publisherName = publisherName;
 	}
 
 	public String getContent() {
@@ -83,11 +94,12 @@ public class Blogpost {
 		this.postedAt = postedAt;
 	}
 
-	public Blogpost(Integer id, String title, String content, String videoUrl, String resourceUrl,
+	public Blogpost(Integer id, String title,String publisherName, String content, String videoUrl, String resourceUrl,
 			OffsetDateTime postedAt) {
 		super();
 		this.id = id;
 		this.title = title;
+		this.publisherName = publisherName;
 		this.content = content;
 		this.videoUrl = videoUrl;
 		this.resourceUrl = resourceUrl;
